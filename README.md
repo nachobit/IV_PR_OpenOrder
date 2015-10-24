@@ -11,8 +11,8 @@ Proyecto para la gestión de pedidos de pequeña a mediana empresa mediante una 
 - Jose Ignacio Recuerda Cambil
 - Antonio Miguel Pozo Cámara
 
-##Descripción del respositorio
-Este repositorio se encarga de la creación de la aplicación web de gestión de tienda, su integración y módulos asociados para ayudar al despliegue de la aplicación de forma automatizada considerando a su vez herramientas para dar alta disponibilidad en las peticiones que se realicen a través de dispositivos/clientes externos (móviles o web).
+##Descripción de la aplicación
+Creación de la aplicación web de gestión de tienda, su integración y módulos asociados para ayudar al despliegue de la aplicación de forma automatizada considerando a su vez herramientas para dar alta disponibilidad en las peticiones que se realicen a través de dispositivos/clientes externos (móviles o web).
 
 ##Tecnologías usadas
 La aplicación web se desarrolla principalmente en Node.js (con módulos como Express) bajo el sistema Azure y Git.
