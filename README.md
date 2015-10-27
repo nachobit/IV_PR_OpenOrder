@@ -12,19 +12,19 @@ Proyecto para la gestión de pedidos de pequeña a mediana empresa mediante una 
 - Antonio Miguel Pozo Cámara
 
 ##Descripción de la aplicación
-Creación de la aplicación web de gestión de tienda, su integración y módulos asociados para ayudar al despliegue de la aplicación de forma automatizada en cualquier sistema, considerando a su vez herramientas para dar alta disponibilidad en las peticiones que se realicen a través de dispositivos/clientes externos (móviles o web).
+Creación de una aplicación web de gestión de tienda (manejo y distribución de clientes), su integración y módulos asociados para ayudar al despliegue de la aplicación de forma automatizada en cualquier sistema, considerando a su vez herramientas para dar alta disponibilidad en las peticiones que se realicen a través de dispositivos/clientes externos (móviles o web).
+
+La aplicación web se basa en Node.js (con módulos como Express), Python con Flask y bajo el sistema Azure - Git (como base de datos y almacenamiento).
 
 ##Herramientas y Servicios 
-La aplicación web se basa en Node.js (con módulos como Express), Python y bajo el sistema Azure - Git (como base de datos y almacenamiento).
-
-Se hará uso de otros *servicios* y frameworks MVC:
+Se hará uso de *servicios* y frameworks MVC en:
 
  + Pruebas aplicación:
  	- Mocha ó Nock
  	- Nightwatch 
 
  + Otros:
- 	- Docker (como contenedor de nuestra aplicación web para su despliegue)
+ 	- Docker (como contenedor de la aplicación web para su despliegue)
  	- Bower (librerías y recursos para el front-end a desarrollar)
  	- Django
  	- Gulp (automatizar tareas)
