@@ -12,6 +12,11 @@ Proyecto para la gestión de pedidos de pequeña a mediana empresa mediante una 
 - Antonio Miguel Pozo Cámara
 
 ##Descripción de la aplicación
-Creación de una aplicación web para la gestión de clientes y de los comercios asociados. 
+Creación de una aplicación web *CRM* (Customer Relationship Management) para la gestión de clientes y de los comercios asociados. Se encargará de crear un modelo de gestión de "usuarios" con el fin de obtener:
 
-La aplicación será accesible desde cualquier navegador y se desarrolla con Flask y una base de datos SQLite. Para su despliegue se utiliza Heroku (PaaS).
+ - Automatización y promoción de ventas
+ - Seguimiento personalizado desde la primera toma de contacto con el cliente
+ - Aprovechar los recursos implícitos en la base de datos de estos clientes
+ - Atención al cliente y reporte de incidencias
+
+La aplicación será accesible desde cualquier navegador. Se desarrolla con Flask y una base de datos MySQL. Para su despliegue se utiliza Heroku (como PaaS).
