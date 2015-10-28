@@ -19,4 +19,11 @@ Creación de una aplicación web *CRM* (Customer Relationship Management) para l
  - Aprovechar los recursos implícitos en la base de datos de estos clientes
  - Atención al cliente y reporte de incidencias
 
-La aplicación será accesible desde cualquier navegador. Se desarrolla con Flask y una base de datos MySQL. Para su despliegue se utiliza Heroku (como PaaS).
+##Infraestructura Virtual
+La aplicación será accesible desde cualquier navegador. 
+
+Se desarrolla con **Flask** (Python) y contendrá una **base de datos MySQL**. 
+
+Para su despliegue se utilizará **Heroku (como PaaS)**. 
+
+Se usarán también herramientas proporcionadas por **ZOHO (como SaaS)** para inclusión de chat en la aplicación.
