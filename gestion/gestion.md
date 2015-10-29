@@ -9,9 +9,11 @@ La aplicación está escrita en Python usando Flask. Por ello se han usado las s
  
  - Para Flask lo más sencillo es usar su propia herramienta **Werkzeug** que permite un uso en conjunto con *unittest*.
  
-	+ Se crea un archivo *test.py* en el mismo directorio de *app.py* (archivo de Flask que general el entorno web).
+###unittest
+
+ * Se crea un archivo *test.py* en el mismo directorio de *app.py* (archivo de Flask que general el entorno web).
 	
-	+ Se importa *unittest* y crean algunos test para verificar el código.
+ * Se importa *unittest* y crean algunos test para verificar el código.
  
  ```
 import unittest
@@ -47,6 +49,8 @@ if __name__ == '__main__':
  python -m unittest test
 ```
  
+ En el primer caso se realiza la verificación correcta. En el segundo caso modificando uno de los *assert* se observa cómo el código falla al lanzar el test:
+ 
  ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/testq.png)
  
 
@@ -56,6 +60,23 @@ Para configurar el sistema de integración continúa y ya que todo el código se
 
 
 
-Travis
+###Travis
+
+Se crea el archivo de configuración de travis (.travis.yml):
+
+```
+language: python
+
+python:
+  - "2.7"
+
+install:
+  - pip install flask-mysql
+
+script: nosetests
+```
+
+Y se configura desde la propia web de forma que verifique la integridad del código.
+
 
 [![Build Status](https://travis-ci.org/nachobit/IV_PR_OpenOrder.svg?branch=master)](https://travis-ci.org/nachobit/IV_PR_OpenOrder)
