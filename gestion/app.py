@@ -13,6 +13,8 @@ app.config['MYSQL_DATABASE_DB'] = 'OpenGestion'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
+data = {}
+
 @app.route('/')
 def main():
     return render_template('gestion.html')
@@ -55,5 +57,12 @@ def signUp():
         cursor.close() 
         conn.close()
 
+@app.route('/logout')
+def logout():
+    flask.session.pop('logged_in')
+    flask.flash('You were logged out')
+    return flask.redirect(flask.url_for('index'))
+
 if __name__ == "__main__":
+    app.debug = True
     app.run(host='0.0.0.0')
