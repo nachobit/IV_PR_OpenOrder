@@ -1,4 +1,4 @@
-# Proyecto IV
+# Proyecto IV - openGestion - #
 #PRIMER HITO#
 
 ##Autor e integrante del repositorio 
