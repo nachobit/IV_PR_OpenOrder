@@ -32,8 +32,14 @@ Se usarán también herramientas proporcionadas por **ZOHO (como SaaS)** para in
 
 
 #SEGUNDO HITO#
-#Gestión de clientes
+#Integración Continua
 
+La integración continua se ha realizado sobre el primer desarrollo del CRM de gestión de clientes enlazando con la base de datos y donde se ha creado un acceso interno mediante *login* para administrar los datos e información relativa:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/pane1.png)
+
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/pane2.png)
 
 ##Pruebas de código
 La aplicación está escrita en Python usando Flask. Por ello se han usado las siguientes herramientas para realizar los test necesarios y verificar el correcto funcionamiento así como la calidad de la misma:
