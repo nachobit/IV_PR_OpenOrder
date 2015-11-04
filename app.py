@@ -1,19 +1,19 @@
 from flask import Flask, render_template, json, request
 from flask.ext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
-#from flaskext.mysql import MySQL
 
-mysql = MySQL()
+#PRUEBA MYSQL LOCAL
+#mysql = MySQL()
 app = Flask(__name__)
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'nacho'
-app.config['MYSQL_DATABASE_PASSWORD'] = '1989+'
-app.config['MYSQL_DATABASE_DB'] = 'OpenGestion'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-mysql.init_app(app)
+#app.config['MYSQL_DATABASE_USER'] = 'nacho'
+#app.config['MYSQL_DATABASE_PASSWORD'] = '1989+'
+#app.config['MYSQL_DATABASE_DB'] = 'OpenGestion'
+#app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+#mysql.init_app(app)
 
-data = {}
+#data = {}
 
 @app.route('/')
 def main():
@@ -24,7 +24,7 @@ def gestion():
 	#return "OpenOrder"
     #return render_template('gestion.html')
     return render_template('singup.html')
-
+'''
 @app.route('/signUp',methods=['POST','GET'])
 def signUp():
     try:
@@ -56,7 +56,7 @@ def signUp():
     finally:
         cursor.close() 
         conn.close()
-
+'''
 @app.route('/logout')
 def logout():
     flask.session.pop('logged_in')
