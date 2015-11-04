@@ -8,7 +8,5 @@ setup(name='openGestion',
 	author_email='nachorc@correo.ugr.es',
 	license='GNU General Public License',
 	packages=['openGestion'],
-	install_requires=[
-		'Flask',
-	],
+	install_requires=['Flask'],
 	zip_safe=False)
