@@ -1,5 +1,6 @@
 # Proyecto IV - openGestion - #
-#PRIMER HITO#
+
+[![Build Status](https://travis-ci.org/nachobit/IV_PR_OpenOrder.svg?branch=master)](https://travis-ci.org/nachobit/IV_PR_OpenOrder)
 
 ##Autor e integrante del repositorio 
  - Ignacio Romero Cabrerizo
@@ -29,9 +30,7 @@ Para su despliegue se utilizará **Heroku (como PaaS)**.
 
 Se usarán también herramientas proporcionadas por **ZOHO (como SaaS)** para inclusión de chat en la aplicación.
 
-
-
-#SEGUNDO HITO#
+---
 #Integración Continua
 
 La integración continua se ha realizado sobre el primer desarrollo del CRM de gestión de clientes enlazando con la base de datos y donde se ha creado un acceso interno mediante *login* para administrar los datos e información relativa:
@@ -148,5 +147,43 @@ setup(name='openGestion',
 
 Y se configura desde la propia web de forma que verifique la integridad del repositorio en futuras modificaciones.
 
+---
 
-[![Build Status](https://travis-ci.org/nachobit/IV_PR_OpenOrder.svg?branch=master)](https://travis-ci.org/nachobit/IV_PR_OpenOrder)
+##DESPLIEGUE DE LA APLICACIÓN EN UN PAAS
+###HEROKU
+
+Para el despliegue de la aplicación se va a usar HEROKU como PaaS (Platform as a Service), debido a su gran integración con GitHub y la facilidad de uso. Además permite el despliegue de aplicaciones de forma gratuita, a pesar de tener algunas restricciones, será suficiente para nuestro proyecto.
+
+Una vez registrado en Heroku y con el repositorio subido a GitHub, el siguiente paso es hacer *login* desde terminal:
+
+```
+heroku login
+```
+
+Para ello basta con realizar los siguientes pasos tras instalar *Heroku toolbelt* junto con *gunicorn* (Python Web Server Gateway Interface HTTP Server) previamente:
+	
+- Definir el archivo **Procfile** para `decirle Heroku que debe ejecutar`:
+	
+```
+web: gunicorn gettingstarted.wsgi --log-file -
+```
+
+- Definir el archivo **requirements.txt** para que Heroku reconozca la existencia de una aplicación:
+
+```
+pip freeze > requirements.txt
+```
+Del fichero *requirements* nos quedaremos solamente con las dependencias realmente necesarias con el fin de evitar problemas al lanzar Heroku.
+
+Y por último:
+
+	1.  heroku create
+	2.	git push heroku master
+	3.	heroku ps:scale web=1
+	4.	heroku open
+	
+Comprobamos nuestra aplicación funcionando correctamente en Heroku:
+
+[Aplicación](https://calm-mountain-1223.herokuapp.com)
+
+---
