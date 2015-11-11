@@ -154,13 +154,13 @@ Y se configura desde la propia web de forma que verifique la integridad del repo
 
 Para el despliegue de la aplicación se va a usar HEROKU como PaaS (Platform as a Service), debido a su gran integración con GitHub y la facilidad de uso. Además permite el despliegue de aplicaciones de forma gratuita, a pesar de tener algunas restricciones, será suficiente para nuestro proyecto.
 
-Una vez registrado en Heroku y con el repositorio subido a GitHub, el siguiente paso es hacer *login* desde terminal:
+Los siguientes pasos tras instalar *Heroku toolbelt* junto con *gunicorn* (Python Web Server Gateway Interface HTTP Server) previamente:
+
+Una vez registrado en Heroku y con el repositorio subido a GitHub, hacer *login* desde terminal:
 
 ```
 heroku login
 ```
-
-Para ello basta con realizar los siguientes pasos tras instalar *Heroku toolbelt* junto con *gunicorn* (Python Web Server Gateway Interface HTTP Server) previamente:
 	
 - Definir el archivo **Procfile** para `decirle Heroku que debe ejecutar`:
 	
