@@ -182,6 +182,8 @@ Y por último:
 	3.	heroku ps:scale web=1
 	4.	heroku open
 	
+Para cualquier cambio que realicemos a partir de este punto en nuestra aplicación, bastará con realizar el *git push heroku master*.
+	
 Comprobamos nuestra aplicación funcionando correctamente en Heroku:
 
 [Aplicación](https://calm-mountain-1223.herokuapp.com)
