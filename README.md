@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/nachobit/IV_PR_OpenOrder.svg?branch=master)](https://travis-ci.org/nachobit/IV_PR_OpenOrder)
 
+[![Build Status](https://snap-ci.com/nachobit/IV_PR_OpenOrder/branch/master/build_image)](https://snap-ci.com/nachobit/IV_PR_OpenOrder/branch/master)
+
 ##Autor e integrante del repositorio 
  - Ignacio Romero Cabrerizo
 
@@ -183,6 +185,12 @@ Y por último:
 	4.	heroku open
 	
 Para cualquier cambio que realicemos a partir de este punto en nuestra aplicación, bastará con realizar el *git push heroku master*.
+
+Una vez realizados los pasos anteriores ya tendremos la aplicación perfectamente funcionando y corriendo sobre Heroku. Pero para conseguir que los cambios realizados se desplieguen al hacer ```git push ``` y continuar con la integración continua de la aplicación, enlazamos el repositorio con **Snap CI** y configuramos Heroku para trabajar con el Deploy Automático de Snap:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/snap.png)
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/heroCI.png)
 	
 Comprobamos nuestra aplicación funcionando correctamente en Heroku:
 
