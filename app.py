@@ -1,5 +1,5 @@
 from flask import Flask, render_template, json, request
-from wtforms import Form, BooleanField, TextField, PasswordField, validators
+from flask.ext.wtf import Form, BooleanField, TextField, PasswordField, validators
 from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug import generate_password_hash, check_password_hash
 import os, psycopg2
