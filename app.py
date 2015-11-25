@@ -1,6 +1,7 @@
 from flask import Flask, render_template, json, request, session, redirect, url_for
 from wtforms import Form, BooleanField, TextField, PasswordField, validators
-#from flask.ext.wtf import Form, BooleanField, TextField, PasswordField, validators
+#from flask.ext.login import login_user, login_required, logout_user
+#from project.models import User, bcrypt
 from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug import generate_password_hash, check_password_hash
 import os, psycopg2
@@ -33,6 +34,29 @@ class RegisterForm(Form):
     ])
     confirm = PasswordField('Repeat Password')
 
+
+class User(db.Model):
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+    email = db.Column(db.String(120), unique=True)
+    password = db.Column(db.String)
+
+    def __init__(self, name, email, password):
+        self.name = name
+        self.email = email
+        self.password = password
+        #self.password = bcrypt.generate_password_hash(password)
+
+    def __repr__(self):
+        return '<Name %r>' % self.name
+
+
+def get_id(self):
+        return unicode(self.id)
+
+
 @app.route('/')
 def main():
     return render_template('gestion.html')
@@ -46,8 +70,8 @@ def gestion():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
-    if form.validate_on_submit():
-    #if request.method == 'POST' and form.validate():
+    #if form.validate_on_submit():
+    if request.method == 'POST' and form.validate():
         user = User(
             name=form.username.data,
             email=form.email.data,
@@ -55,7 +79,7 @@ def register():
         )
         db.session.add(user)
         db.session.commit()
-        login_user(user)
+        #login_user(user)
         return redirect(url_for('index'))
     return render_template('singup.html', form=form)
 
