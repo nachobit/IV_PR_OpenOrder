@@ -5,6 +5,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug import generate_password_hash, check_password_hash
 import os, psycopg2
 
+
 #PRUEBA MYSQL LOCAL
 #mysql = MySQL()	//LOCAL
 app = Flask(__name__)
