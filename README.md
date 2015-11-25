@@ -52,11 +52,19 @@ Para configurar el sistema de integración continúa y ya que todo el código se
  
 ---
 
-##DESPLIEGUE DE LA APLICACIÓN EN UN PAAS
+#Despliegue de la aplicación en un PaaS
 ###HEROKU
 
-Para el despliegue de la aplicación se va a usar HEROKU como PaaS (Platform as a Service), debido a su gran integración con GitHub y la facilidad de uso. Además permite el despliegue de aplicaciones de forma gratuita, a pesar de tener algunas restricciones, será suficiente para nuestro proyecto.
+Para el despliegue de la aplicación se va a usar [Heroku](https://www.heroku.com/) como PaaS (Platform as a Service), debido a su gran integración con GitHub y la facilidad de uso. Además permite el despliegue de aplicaciones de forma gratuita, a pesar de tener algunas restricciones, será suficiente para nuestro proyecto.
 
 [Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/despliegue.md)
 
 ---
+
+#Entorno de Pruebas
+###DOCKER
+
+La idea detrás de [Docker](https://www.docker.com) es crear contenedores ligeros y portables para las aplicaciones software que puedan ejecutarse en cualquier máquina con Docker instalado, independientemente del sistema operativo que la máquina tenga por debajo, facilitando así también los despliegues. A diferencia de una máquina virtual, no requiere incluir un sistema operativo independiente.
+
+[Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/entornopruebas.md)
+
