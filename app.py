@@ -6,15 +6,12 @@ from werkzeug import generate_password_hash, check_password_hash
 import os, psycopg2
 #from models import *
 
-
 #PRUEBA MYSQL LOCAL
 #mysql = MySQL()	//LOCAL
 app = Flask(__name__)
 
 #Postgre with SQL_ALQCHEMY
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get['DATABASE_URL', 'postgres://yebgaqukiltzzs:HE3SqSFyt09HOEtwsvedM7zJvv@ec2-54-83-203-50.compute-1.amazonaws.com:5432/d2qcb810h7i919']
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://yebgaqukiltzzs:HE3SqSFyt09HOEtwsvedM7zJvv@ec2-54-83-203-50.compute-1.amazonaws.com:5432/d2qcb810h7i919'
-#heroku = Heroku(app)
 #db.init_app(app)
 db = SQLAlchemy(app)
 
@@ -49,8 +46,8 @@ def gestion():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
-    #if form.validate_on_submit():
-    if request.method == 'POST' and form.validate():
+    if form.validate_on_submit():
+    #if request.method == 'POST' and form.validate():
         user = User(
             name=form.username.data,
             email=form.email.data,
