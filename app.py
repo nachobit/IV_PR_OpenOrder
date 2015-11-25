@@ -9,8 +9,10 @@ import os, psycopg2
 app = Flask(__name__)
 
 #Postgre with SQL_ALQCHEMY
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get['DATABASE_URL', 'postgresql://yebgaqukiltzzs:HE3SqSFyt09HOEtwsvedM7zJvv@ec2-54-83-203-50.compute-1.amazonaws.com/d2qcb810h7i919']
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get['DATABASE_URL', 'postgres://yebgaqukiltzzs:HE3SqSFyt09HOEtwsvedM7zJvv@ec2-54-83-203-50.compute-1.amazonaws.com:5432/d2qcb810h7i919']
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://yebgaqukiltzzs:HE3SqSFyt09HOEtwsvedM7zJvv@ec2-54-83-203-50.compute-1.amazonaws.com:5432/d2qcb810h7i919'
 #heroku = Heroku(app)
+#db.init_app(app)
 db = SQLAlchemy(app)
 
 # MySQL configurations for LOCAL
