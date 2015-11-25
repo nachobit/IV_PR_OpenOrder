@@ -4,6 +4,7 @@ from wtforms import Form, BooleanField, TextField, PasswordField, validators
 from flask.ext.sqlalchemy import SQLAlchemy
 from werkzeug import generate_password_hash, check_password_hash
 import os, psycopg2
+from models import *
 
 
 #PRUEBA MYSQL LOCAL

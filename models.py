@@ -1,7 +1,6 @@
-
 from flask.ext.sqlalchemy import SQLAlchemy
-
-
+from werkzeug import generate_password_hash, check_password_hash
+from app import db
 
 #database model
 class User(db.Model):
