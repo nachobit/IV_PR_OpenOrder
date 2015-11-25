@@ -32,24 +32,23 @@ Para su despliegue se utilizará **Heroku (como PaaS)**.
 
 Se usarán también herramientas proporcionadas por **ZOHO (como SaaS)** para inclusión de chat en la aplicación.
 
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/pane2.png)
+
 ---
 #Integración Continua
 
 La integración continua se ha realizado sobre el primer desarrollo del CRM de gestión de clientes enlazando con la base de datos y donde se ha creado un acceso interno mediante *login* para administrar los datos e información relativa:
 
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/pane1.png)
-
-
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/pane2.png)
-
-##Pruebas de código: unittest y Travis
+###Pruebas de código: unittest y Travis
 La aplicación está escrita en Python usando Flask. Por ello se han usado las siguientes herramientas para realizar los test necesarios y verificar el correcto funcionamiento así como la calidad de la misma:
 
  - Para el código Python: `unittest`, ya permite automatización de los test, tiene un uso sencillo, integración con Python y además es un paquete previamente instalado en Python y nos ahorra una instalación. 
  
  - Para Flask lo más sencillo es usar su propia herramienta *Werkzeug* que permite un uso en conjunto con *unittest*.
 
-Para configurar el sistema de integración continúa y ya que todo el código se aloja en GitHub, *Travis-CI* es una buena herramienta para el testeo en este [caso]().
+Para configurar el sistema de integración continúa y ya que todo el código se aloja en GitHub, *Travis-CI* es una buena herramienta para el testeo en este caso. 
+
+[Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/integracioncont.md)
  
 ---
 
@@ -58,44 +57,6 @@ Para configurar el sistema de integración continúa y ya que todo el código se
 
 Para el despliegue de la aplicación se va a usar HEROKU como PaaS (Platform as a Service), debido a su gran integración con GitHub y la facilidad de uso. Además permite el despliegue de aplicaciones de forma gratuita, a pesar de tener algunas restricciones, será suficiente para nuestro proyecto.
 
-Los siguientes pasos tras instalar *Heroku toolbelt* junto con *gunicorn* (Python Web Server Gateway Interface HTTP Server) previamente:
-
-Una vez registrado en Heroku y con el repositorio subido a GitHub, hacer *login* desde terminal:
-
-```
-heroku login
-```
-	
-- Definir el archivo **Procfile** para `decirle Heroku que debe ejecutar`:
-	
-```
-web: gunicorn gettingstarted.wsgi --log-file -
-```
-
-- Definir el archivo **requirements.txt** para que Heroku reconozca la existencia de una aplicación:
-
-```
-pip freeze > requirements.txt
-```
-Del fichero *requirements* nos quedaremos solamente con las dependencias realmente necesarias con el fin de evitar problemas al lanzar Heroku.
-
-Y por último:
-
-	1.  heroku create
-	2.	git push heroku master
-	3.	heroku ps:scale web=1
-	4.	heroku open
-	
-Para cualquier cambio que realicemos a partir de este punto en nuestra aplicación, bastará con realizar el *git push heroku master*.
-
-Una vez realizados los pasos anteriores ya tendremos la aplicación perfectamente funcionando y corriendo sobre Heroku. Pero para conseguir que los cambios realizados se desplieguen al hacer ```git push ``` y continuar con la integración continua de la aplicación, enlazamos el repositorio con **Snap CI** y configuramos Heroku para trabajar con el Deploy Automático de Snap:
-
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/snap.png)
-
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/heroCI.png)
-	
-Comprobamos nuestra aplicación funcionando correctamente en Heroku:
-
-[Aplicación](https://calm-mountain-1223.herokuapp.com)
+[Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/despliegue.md)
 
 ---
