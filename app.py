@@ -25,6 +25,10 @@ db = SQLAlchemy(app)
 
 #data = {}
 
+class LoginForm(Form):
+    username = TextField('Username', [validators.Length(min=4, max=25)])
+    password = PasswordField('Password', [validators.Length(min=1, max=25)])
+
 class RegisterForm(Form):
     username = TextField('username', [validators.Length(min=4, max=25)])
     email = TextField('email', [validators.Length(min=6, max=35)])
@@ -67,6 +71,24 @@ def gestion():
     #return render_template('gestion.html')
     return render_template('singup.html')
 
+@app.route('/login')
+def login():
+    error = None
+    form = LoginForm(request.form)
+    if request.method == 'POST':
+        if form.validate():
+            user = User.query.filter_by(name=request.form['username']).first()
+            if user is not None and bcrypt.check_password_hash(
+                user.password, request.form['password']
+            ):
+                login_user(user)
+                flash('You were logged in. Go Crazy.')
+                return redirect(url_for('index'))
+
+            else:
+                error = 'Invalid username or password.'
+    return render_template('login.html', form=form, error=error)
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
@@ -79,7 +101,7 @@ def register():
         )
         db.session.add(user)
         db.session.commit()
-        #login_user(user)
+        login_user(user)
         return redirect(url_for('index'))
     return render_template('singup.html', form=form)
 
