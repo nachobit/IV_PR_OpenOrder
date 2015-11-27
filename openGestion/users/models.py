@@ -5,7 +5,7 @@ from openGestion import db
 #database model
 class User(db.Model):
 
-    __tablename__ = 'users_user'
+    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True)
     email = db.Column(db.String(120), unique=True)
@@ -17,8 +17,14 @@ class User(db.Model):
         self.password = password
         #self.password = bcrypt.generate_password_hash(password)
 
-    def __repr__(self):
-        return '<name %r>' % self.name
+    def is_authenticated(self):
+        return True
 
-#def get_id(self):
-#        return unicode(self.id)
+    def is_active(self):
+        return True
+
+    def get_id(self):
+        return unicode(self.id)
+
+    def __repr__(self):
+        return '<name - {}>'.format(self.name)
