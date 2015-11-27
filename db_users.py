@@ -1,5 +1,5 @@
-from project import db
-from project.models import User
+from openGestion import db
+from openGestion.models import User
 
 # insert data
 db.session.add(User("pepito", "pepe@email.com", "1234"))
