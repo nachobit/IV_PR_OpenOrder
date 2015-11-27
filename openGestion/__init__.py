@@ -6,12 +6,13 @@ from flask.ext.login import LoginManager
 app = Flask(__name__)
 app.config.from_object('config')
 #app.config.from_object(os.environ['APP_SETTINGS'])
+db = SQLAlchemy(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://yebgaqukiltzzs:HE3SqSFyt09HOEtwsvedM7zJvv@ec2-54-83-203-50.compute-1.amazonaws.com:5432/d2qcb810h7i919'
-db = SQLAlchemy(app)
+
 
 from openGestion.users import views
 
