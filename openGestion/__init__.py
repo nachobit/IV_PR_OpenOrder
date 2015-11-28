@@ -1,21 +1,19 @@
-import os, sys
+import os
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
 
 app = Flask(__name__)
 
-app.secret_key = "somethingelse-else"
+login_manager = LoginManager()
+login_manager.init_app(app)
+#app.secret_key = "somethingelse-else"
 #app.config.from_object('config')
 #app.config.from_object('config.BaseConfig')
 app.config.from_object(os.environ['APP_SETTINGS'])
-
 db = SQLAlchemy(app)
 
-login_manager = LoginManager()
-login_manager.init_app(app)
-
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://yebgaqukiltzzs:HE3SqSFyt09HOEtwsvedM7zJvv@ec2-54-83-203-50.compute-1.amazonaws.com:5432/d2qcb810h7i919'
+#app.config['SQLALCHEMY_DATABASE_URI'] = ''
 
 
 from openGestion.users import views
