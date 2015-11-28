@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from wtforms import BooleanField, TextField, PasswordField
+from wtforms import BooleanField, TextField, PasswordField, validators
 from wtforms.validators import DataRequired, EqualTo, Email
 
 #class LoginForm(Form):
