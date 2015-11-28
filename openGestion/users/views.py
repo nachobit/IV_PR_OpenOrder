@@ -24,7 +24,7 @@ def gestion():
 def login():
     error = None
     #form = LoginForm(request.form)
-    form = LoginForm (csrf_enabled=False)
+    form = LoginForm (request.form)
     if request.method == 'POST':
         if form.validate_on_submit():
             user = User.query.filter_by(name=request.form['username']).first()
