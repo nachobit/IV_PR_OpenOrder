@@ -15,7 +15,7 @@ db = SQLAlchemy(app)
 
 from openGestion.users import views
 
-#register blueprints
+#---register blueprints---
 #from app.users.views import mod
 from openGestion.users.views import mod as usersModule
 #app.register_blueprint(mod)
