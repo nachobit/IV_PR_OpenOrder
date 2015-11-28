@@ -35,6 +35,16 @@ Se usarán también herramientas proporcionadas por **ZOHO (como SaaS)** para in
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/pane2.png)
 
 ---
+
+##Enlazado con Base de Datos: PostgreSQL
+Este proyecto se va a crear y enlazar con una base de datos [PostGres](http://postgresapp.com) de [Heroku](https://www.heroku.com/postgres) para el manejo de las sesiones de usuarios y datos asociados a la aplicación web.
+
+Para ello se hará uso de [SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/).
+
+[Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/basedatos.md)
+
+---
+
 #Integración Continua
 
 La integración continua se ha realizado sobre el primer desarrollo del CRM de gestión de clientes enlazando con la base de datos y donde se ha creado un acceso interno mediante *login* para administrar los datos e información relativa:
