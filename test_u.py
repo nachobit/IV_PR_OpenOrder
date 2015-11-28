@@ -1,5 +1,5 @@
 import unittest
-from app import app
+from openGestion import app
 from flask import Flask, render_template
 
 def fun(x):
