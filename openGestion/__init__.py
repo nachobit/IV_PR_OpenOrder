@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
@@ -8,10 +7,13 @@ app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 #app.secret_key = "somethingelse-else"
-#app.config.from_object('config')
+app.config.from_object('config')
 #app.config.from_object('config.BaseConfig')
-app.config.from_object(os.environ['APP_SETTINGS'])
-db = SQLAlchemy(app)
+
+#configuration db
+import os
+#app.config.from_object(os.environ['APP_SETTINGS'])
+db = SQLAlchemy(app)	#object
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = ''
 
