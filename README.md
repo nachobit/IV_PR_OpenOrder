@@ -37,7 +37,7 @@ Se usarán también herramientas proporcionadas por **ZOHO (como SaaS)** para in
 ---
 
 ##Enlazado con Base de Datos: PostgreSQL
-Este proyecto se va a crear y enlazar con una base de datos [PostGres](http://postgresapp.com) de [Heroku](https://www.heroku.com/postgres) para el manejo de las sesiones de usuarios y datos asociados a la aplicación web.
+Este proyecto se va a enlazar con una base de datos [PostGres](http://postgresapp.com) de [Heroku](https://www.heroku.com/postgres) para el manejo de las sesiones de usuarios y datos asociados a la aplicación web.
 
 Para ello se hará uso de [SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.1/).
 
