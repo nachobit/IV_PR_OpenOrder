@@ -1,6 +1,6 @@
 from flask.ext.wtf import Form
-from wtforms import BooleanField, TextField, PasswordField, validators
-from wtforms.validators import Required, EqualTo, Email
+from wtforms import BooleanField, TextField, PasswordField
+from wtforms.validators import DataRequired, EqualTo, Email
 
 #class LoginForm(Form):
 #    username = TextField('Username', [validators.Length(min=4, max=25)])
