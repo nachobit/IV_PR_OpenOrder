@@ -18,7 +18,7 @@ Ya tendremos Docker configurado con el *Dockerfile*:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/hub1.png)
 
-Y el repositorio enlazado y ejecturado en el contenedor:
+Y el repositorio enlazado y ejecutando en el contenedor:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/hub2.png)
 
