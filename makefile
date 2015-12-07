@@ -2,6 +2,9 @@ test:
 	python -m unittest test_u
 .PHONY: test
 
+install:
+	pip install -r requirements.txt
+
 heroku:
 	wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 	heroku login
