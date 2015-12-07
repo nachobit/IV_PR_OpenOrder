@@ -16,3 +16,4 @@ RUN sudo git clone https://github.com/nachobit/IV_PR_OpenOrder.git
 #Instalar requerimientos necesarios
 RUN cd IV_PR_OpenOrder && git pull
 RUN cd IV_PR_OpenOrder && make install
+
