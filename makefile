@@ -3,7 +3,11 @@ test:
 .PHONY: test
 
 install:
-	pip install -r requirements.txt
+	sudo apt-get update 
+	sudo apt-get install -y python-dev
+	sudo apt-get install -y python-pip
+	sudo pip install --upgrade pip
+	sudo pip install -r requirements.txt
 
 heroku:
 	wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh

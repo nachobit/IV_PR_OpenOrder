@@ -4,7 +4,7 @@ Para instalar **docker** en ubuntu debemos ejecutar: ``` sudo apt-get install do
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/docker1.png)
 
-Una vez hecho esto se deben realizar los siguientes pasos (como se indica [aquí](https://docs.docker.com/docker-hub/builds/)): 
+Para crear el contenedor Docker se deben realizar los siguientes pasos (como se indica [aquí](https://docs.docker.com/docker-hub/builds/)): 
 
 - Crear el archivo [Dockerfile](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/Dockerfile) 
 - Registrarse en [DockerHub](https://hub.docker.com)
