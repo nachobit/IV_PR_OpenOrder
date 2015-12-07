@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM ubuntu:latest
 
 #Autor
 MAINTAINER Ignacio Romero Cabrerizo <nachotempus@gmail.com> 
