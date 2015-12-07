@@ -14,7 +14,7 @@ Para crear el contenedor Docker se deben realizar los siguientes pasos (como se 
 	
 Ya tendremos nuestra aplicación en Docker:
 
-![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/docker2.png)
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/hub2.png)
 
 - Solo falta lanzar el [script](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/docker.sh) que automatiza las siguientes tareas:
 	
