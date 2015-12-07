@@ -1,5 +1,5 @@
 FROM ubuntu:15.10
-MAINTAINER Ignacio Romero Cabrerizo
+MAINTAINER Ignacio Romero Cabrerizo <nachotempus@gmail.com> 
 
 #Instalar git y herramientas necesarias
 RUN sudo apt-get -y update
