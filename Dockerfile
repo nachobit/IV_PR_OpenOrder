@@ -1,8 +1,12 @@
 FROM ubuntu:15.10
+
+#Autor
 MAINTAINER Ignacio Romero Cabrerizo <nachotempus@gmail.com> 
 
-#Instalar git y herramientas necesarias
+#Actualizar sistema
 RUN sudo apt-get -y update
+
+#Instalar git y herramientas necesarias
 RUN sudo apt-get install -y git
 RUN sudo apt-get install -y build-essential
 
