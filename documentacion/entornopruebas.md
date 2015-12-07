@@ -11,8 +11,14 @@ Para crear el contenedor Docker se deben realizar los siguientes pasos (como se 
 	- Crear un *Automated Build* de nuestro repositorio enlazado de *GitHub*
 	
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/hub.png)
+
+En la opción *Build Settings* indicamos el Tag (latest) al que realizar el build. 
 	
-Ya tendremos nuestra aplicación en Docker:
+Ya tendremos Docker configurado con el *Dockerfile*:
+
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/hub1.png)
+
+Y el repositorio enlazado y ejecturado en el contenedor:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/hub2.png)
 
