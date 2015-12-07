@@ -10,6 +10,8 @@ Una vez hecho esto se deben realizar los siguientes pasos:
 - Registrarse en [DockerHub](https://hub.docker.com)
 	- Crear un *Automated Build* de nuestro repositorio enlazado de *GitHub*
 	
+![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/hub.png)
+	
 Ya tendremos nuestra aplicación en Docker:
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/practica/docker2.png)
