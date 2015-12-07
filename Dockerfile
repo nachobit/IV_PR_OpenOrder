@@ -2,7 +2,7 @@ FROM ubuntu:15.10
 MAINTAINER Ignacio Romero Cabrerizo
 
 #Instalar git y herramientas necesarias
-RUN sudo apt-get update
+RUN sudo apt-get -y update
 RUN sudo apt-get install -y git
 RUN sudo apt-get install -y build-essential
 
