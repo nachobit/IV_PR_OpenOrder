@@ -56,7 +56,7 @@ Y por último:
 ```
 wget -O- https://toolbelt.heroku.com/install.sh | sh
 ```
-Que se resumen en realizar los pasos:
+Que automatiza los pasos:
 
 	1.  heroku create
 		1.1 git add .
