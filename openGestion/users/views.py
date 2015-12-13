@@ -14,11 +14,11 @@ mod = Blueprint('users', __name__,
 def homepage():
     return render_template('gestion.html')
 
-@mod.route('/gestion')
+@mod.route('/admin')
 def gestion():
 	#return "OpenOrder"
     #return render_template('gestion.html')
-    return render_template('singup.html')
+    return render_template('admin2.html')
 
 @mod.route('/login', methods=['GET', 'POST'])
 def login():
