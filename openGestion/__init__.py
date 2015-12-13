@@ -9,13 +9,15 @@ app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config.from_object(os.environ['APP_SETTINGS'])
+#print(os.environ['APP_SETTINGS'])
+
 db = SQLAlchemy(app)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = ''
 
 from openGestion.users import views
 
-#---register blueprints---
+#---register blueprints: join models(User)---
 #from app.users.views import mod
 from openGestion.users.views import mod as usersModule
 #app.register_blueprint(mod)
@@ -23,7 +25,6 @@ app.register_blueprint(usersModule)
 
 from openGestion.users.models import User
 login_manager.login_view = "users.login"
-
 
 @login_manager.user_loader
 def load_user(user_id):
