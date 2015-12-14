@@ -9,7 +9,8 @@ class TestCode(unittest.TestCase):
         self.assertIn(b'Welcome!', response.data)
 
     def test_code(self):
-        self.test_app = app.test_client()
+        #self.test_app = app.test_client()
+        self.assertEqual(fun(3), 4)
 
 if __name__ == '__main__':
     unittest.main()
