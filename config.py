@@ -18,6 +18,7 @@ class TestConfig(BaseConfig):
     WTF_CSRF_ENABLED = False
 
 class DevelopmentConfig(BaseConfig):
+    DEVELOPMENT = True
     DEBUG = True
 
 class ProductionConfig(BaseConfig):

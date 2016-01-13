@@ -17,7 +17,9 @@ pytz==2013.7
 Flask-WTF==0.12
 Flask-Login==0.3.2
 Flask-SQLAlchemy==2.1
+Flask-Migrate==1.7.0
 WTForms==2.0.2
 Werkzeug==0.11.2
 SQLAlchemy==1.0.9
 psycopg2==2.6.1
+alembic==0.8.4
