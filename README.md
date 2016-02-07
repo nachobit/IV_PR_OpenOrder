@@ -78,3 +78,15 @@ La idea detrás de [Docker](https://www.docker.com) es crear contenedores ligero
 
 [Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/entornopruebas.md)
 
+---
+
+#Despliegue de la aplicación en un IaaS
+###AZURE
+
+Se ha realizado el despliegue automático de la aplicación en [Azure](http://azure.microsoft.com) mediante el uso de [Vagrant](https://www.vagrantup.com) y [Ansible](http://www.ansible.com) como gestores de configuración. Concretamente:
+
+**Vagrant** es una herramienta para la creación y configuración de entornos de desarrollo virtualizados.
+
+**Ansible** es una plataforma de software libre para configurar y administrar computadoras. Para nuestro despliegue hará de *provisionador*.
+
+[Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/azure.md)
