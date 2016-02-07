@@ -28,7 +28,7 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
 	3. azure account download
 	4. Descargar el fichero tras iniciar sesión en el link mostrado en terminal	
 	![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema5/azure4.png)
-	5. azure account import <archivo-descargado>
+	5. azure account import archivo-descargado
  
  - Obtener el *"id"* de nuestra cuenta en Azure para el siguiente paso:
  
@@ -63,7 +63,7 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
  - Crear el archivo de configuración de *Ansible*, en este caso **vdeploy.yml**:
  	
  ```
- 	- hosts: localhost
+- hosts: localhost
 
   become: yes
   become_method: sudo
@@ -82,19 +82,16 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
     action: apt pkg=python-pip
 
   - name: Clonar repositorio de git
-    git: repo=https://github.com/nachobit/DAI_bares.git  dest=~/DAI2 version=HEAD force=yes
+    git: repo=https://github.com/nachobit/DAI_bares.git  dest=DAI2 clone=yes force=yes
   
   - name: Permisos de ejecucion al directorio
-    file: path=~/DAI2 state=touch mode="u+rw"
+    file: path=DAI2 state=touch mode="u+rw"
 
   - name: Instalar requisitos
-    shell: cd ~/DAI2 && make install
-    
-  - name: Abrir puerto 8000
-    command: sudo fuser -k 8000/tcp
+    shell: cd DAI2 && make install
 
   - name: ejecutar
-    command: nohup sudo python ~/DAI2/manage.py runserver 0.0.0.0:8000
+    command: nohup sudo python DAI2/manage.py runserver 0.0.0.0:8000
     register: errores
   
   - debug: msg="{{ errores.stdout }}"
@@ -126,3 +123,5 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
  	``` vagrant provision ```
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/vg2.png)
+
+La aplicación estará andando en la VM de Azure como se puede ver [aquí](http://baresnacho-service-gkdzg.cloudapp.net:8000/rango/).
