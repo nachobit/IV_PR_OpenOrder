@@ -89,4 +89,6 @@ Se ha realizado el despliegue automático de la aplicación en [Azure](http://az
 
 **Ansible** es una plataforma de software libre para configurar y administrar computadoras. Para nuestro despliegue hará de *provisionador*.
 
+Para desplegar la aplicación de forma automática ejecutamos el *script*: [dploy.sh](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/despliegue/deploy.sh)
+
 [Documento](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/documentacion/azure.md)
