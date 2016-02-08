@@ -1,0 +1,33 @@
+- hosts: localhost
+
+  become: yes
+  become_method: sudo
+  remote_user: vagrant
+
+  tasks:
+  - name: Actualizar
+    apt: update_cache=yes upgrade=dist
+  - name: Instalar paquetes
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+    
+  - name: Instalar pip
+    action: apt pkg=python-pip
+
+  - name: Clonar repositorio de git
+    git: repo=https://github.com/nachobit/DAI_bares.git  dest=DAI2 clone=yes force=yes
+  
+  - name: Permisos de ejecucion al directorio
+    file: path=DAI2 state=touch mode="u+rw"
+
+  - name: Instalar requisitos
+    shell: cd DAI2 && make install
+
+  - name: ejecutar
+    command: nohup sudo python DAI2/manage.py runserver 0.0.0.0:8000
+    register: errores
+  
+  - debug: msg="{{ errores.stdout }}"
+  - debug: msg="{{ errores.stderr }}"

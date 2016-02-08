@@ -101,13 +101,27 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
  
  - Crear el **Vagrantfile** que creará la MV en Azure y la configurará de forma automática:
  
-```Vagrant.configure(2) do |config|  config.vm.box = "azure"  # Create a forwarded port mapping which allows access to a specific port  # within the machine from a port on the host machine. In the example below,  # accessing "localhost:8080" will access port 80 on the guest machine.  config.vm.network "forwarded_port", guest: 8000, host: 8000  # Create a private network, which allows host-only access to the machine  # using a specific IP.  config.vm.network "private_network", ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"  # Create a public network, which generally matched to bridged network.  # Bridged networks make the machine appear as another physical device on  # your network.  config.vm.network "public_network"  config.vm.define "localhost" do |l|    l.vm.hostname = "localhost"  end    # Provider-specific configuration so you can fine-tune various  # backing providers for Vagrant. These expose provider-specific options.  # Example for VirtualBox:  #  config.vm.provider "azure" do |azure|  azure.mgmt_certificate = File.expand_path('~/Documentos/clave/azure.pem')    azure.mgmt_endpoint = 'https://management.core.windows.net'    azure.subscription_id = 'd6bbcf1a-b999-4eab-934d-cd3a395a90cf'    azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'    azure.vm_name = 'maquina-nacho-ubu'    azure.vm_password = 'Azure@Nacho16'    azure.vm_location = 'Central US'    azure.ssh_port = '22'    azure.tcp_endpoints = '8000:8000'  end  # Enable provisioning with a shell script. Additional provisioners such as  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the  # documentation for more information about their specific syntax and use.  config.vm.provision "ansible" do |ansible|    ansible.sudo = true      ansible.playbook = "vdeploy.yml.yml"      ansible.verbose = "v"      ansible.host_key_checking = false    endend 
+```Vagrant.configure(2) do |config|  config.vm.box = "azure"  # Create a forwarded port mapping which allows access to a specific port  # within the machine from a port on the host machine. In the example below,  # accessing "localhost:8080" will access port 80 on the guest machine.  config.vm.network "forwarded_port", guest: 8000, host: 8000  # Create a private network, which allows host-only access to the machine  # using a specific IP.  config.vm.network "private_network", ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"  # Create a public network, which generally matched to bridged network.  # Bridged networks make the machine appear as another physical device on  # your network.  config.vm.network "public_network"  config.vm.define "localhost" do |l|    l.vm.hostname = "localhost"  end    # Provider-specific configuration so you can fine-tune various  # backing providers for Vagrant. These expose provider-specific options.  # Example for VirtualBox:  #  config.vm.provider "azure" do |azure|
+  azure.mgmt_certificate = File.expand_path('~/Documents/Virtual/openG/clave/azure.pem')
+    azure.mgmt_endpoint = 'https://management.core.windows.net'
+    azure.subscription_id = 'd6bbcf1a-b999-4eab-934d-cd3a395a90cf'
+    azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20151218-en-us-30GB'
+    azure.vm_name = 'baresnacho'
+    azure.vm_password = 'Clave#Nacho#1'
+    azure.vm_location = 'Central US'
+    azure.ssh_port = '22'
+    azure.tcp_endpoints = '80:80'
+  end  # Enable provisioning with a shell script. Additional provisioners such as  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the  # documentation for more information about their specific syntax and use.  config.vm.provision "ansible" do |ansible|    ansible.sudo = true      ansible.playbook = "vdeploy.yml"      ansible.verbose = "v"      ansible.host_key_checking = false    endend 
        
 ```
 
  - Exportamos la variable de entorno de Ansible para que se reconozca los host:
 
 	``` export ANSIBLE_HOSTS=~/ansible_hosts ```
+  
+ ---
+ 
+ Por último realizamos los mismos pasos que el *script* inicial: 
   
  - Crear un "box" con una imagen de azure:
  
@@ -118,9 +132,7 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
  	
  __NOTA__
  
- En el caso de disponer de la máquina creada bastaría con:
- 	
- 	``` vagrant provision ```
+ En el caso de disponer de la máquina creada bastaría con: ```vagrant provision```
 
 ![img](https://github.com/nachobit/ETSIIT/blob/master/backup/IV1516/ejercicios/tema6/vg2.png)
 
