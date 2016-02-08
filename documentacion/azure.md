@@ -13,7 +13,7 @@ La forma automática de realizar el despliegue completo de la aplicación y deja
 	vagrant up --provider=azure
 ```
 
-Tambíen se puede lanzar mediante la utilidad **Fabric** con la orden descrita en un [fabfile.py](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/despliegue/fabfile.py):
+Tambíen se puede lanzar mediante la utilidad **Fabric** con la orden descrita en un [fabfile.py](https://github.com/nachobit/IV_PR_OpenOrder/fabfile.py):
 
 ```fab -H vagrant@baresnacho-service-gkdzg.cloudapp.net runapp```
 
