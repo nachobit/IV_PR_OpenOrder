@@ -13,7 +13,7 @@ La forma automática de realizar el despliegue completo de la aplicación y deja
 	vagrant up --provider=azure
 ```
 
-Tambíen se puede lanzar mediante la utilidad **Fabric** con la orden descrita en un [fabfile.py](https://github.com/nachobit/IV_PR_OpenOrder/fabfile.py):
+Tambíen se puede lanzar mediante la utilidad **Fabric** con la orden descrita en un [fabfile.py](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/fabfile.py):
 
 ```fab -H vagrant@baresnacho-service-gkdzg.cloudapp.net runapp```
 
@@ -107,7 +107,34 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
  
  - Crear el [**Vagrantfile**](https://github.com/nachobit/IV_PR_OpenOrder/blob/master/despliegue/Vagrantfile) que creará la MV en Azure y la configurará de forma automática:
  
-```Vagrant.configure(2) do |config|  config.vm.box = "azure"  # Create a forwarded port mapping which allows access to a specific port  # within the machine from a port on the host machine. In the example below,  # accessing "localhost:8080" will access port 80 on the guest machine.  config.vm.network "forwarded_port", guest: 8000, host: 8000  # Create a private network, which allows host-only access to the machine  # using a specific IP.  config.vm.network "private_network", ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"  # Create a public network, which generally matched to bridged network.  # Bridged networks make the machine appear as another physical device on  # your network.  config.vm.network "public_network"  config.vm.define "localhost" do |l|    l.vm.hostname = "localhost"  end    # Provider-specific configuration so you can fine-tune various  # backing providers for Vagrant. These expose provider-specific options.  # Example for VirtualBox:  #  config.vm.provider "azure" do |azure|
+```
+Vagrant.configure(2) do |config|
+
+  config.vm.box = "azure"
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  config.vm.network "private_network", ip: "192.168.56.10", virtualbox__intnet: "vboxnet0"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  config.vm.network "public_network"
+
+  config.vm.define "localhost" do |l|
+    l.vm.hostname = "localhost"
+  end
+  
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  config.vm.provider "azure" do |azure|
   azure.mgmt_certificate = File.expand_path('~/Documents/Virtual/openG/clave/azure.pem')
     azure.mgmt_endpoint = 'https://management.core.windows.net'
     azure.subscription_id = 'd6bbcf1a-b999-4eab-934d-cd3a395a90cf'
@@ -117,7 +144,18 @@ Los pasos a seguir para poder realizar el despliegue automático en Azure con el
     azure.vm_location = 'Central US'
     azure.ssh_port = '22'
     azure.tcp_endpoints = '80:80'
-  end  # Enable provisioning with a shell script. Additional provisioners such as  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the  # documentation for more information about their specific syntax and use.  config.vm.provision "ansible" do |ansible|    ansible.sudo = true      ansible.playbook = "vdeploy.yml"      ansible.verbose = "v"      ansible.host_key_checking = false    endend 
+  end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  config.vm.provision "ansible" do |ansible|
+    ansible.sudo = true
+      ansible.playbook = "vdeploy.yml"
+      ansible.verbose = "v"
+      ansible.host_key_checking = false
+    end
+end 
        
 ```
 
