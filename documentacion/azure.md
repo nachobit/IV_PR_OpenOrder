@@ -5,13 +5,13 @@
 ###Despliegue automático
 La forma automática de realizar el despliegue completo de la aplicación y dejarla funcionando en una MV de Azure es con un *script* como el siguiente:
 
-	```
+```
 	#!/bin/bash
 	
 	vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
 	
 	vagrant up --provider=azure
-	```
+```
 
 ###Configuración completa (pasos a seguir)
 Los pasos a seguir para poder realizar el despliegue automático en Azure con el script anterior son los siguientes:
